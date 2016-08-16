@@ -13,5 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require clean-blog.min
 //= require turbolinks
 //= require_tree .
+
