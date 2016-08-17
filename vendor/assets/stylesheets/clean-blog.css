@@ -3,6 +3,26 @@
  * Copyright 2013-2016 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
+
+/*PAT ADDITIONS*/
+
+.fake-a{
+  color: white;
+  font-weight: 800;
+  text-transform: uppercase;
+  background: transparent;
+  box-sizing: border-box;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  padding:20px;
+  margin: 0px;
+
+}
+
+
+
+
+/*ORIGINAL CODE*/
 body {
   font-family: 'Lora', 'Times New Roman', serif;
   font-size: 20px;
@@ -398,3 +418,6 @@ img::-moz-selection {
 body {
   -webkit-tap-highlight-color: #0085A1;
 }
+
+
+
