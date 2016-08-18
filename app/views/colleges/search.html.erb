@@ -1,8 +1,17 @@
 
 <h1>Results</h1>
+<%= link_to 'Back', :back %>
+<br>
+<br>
 
 <% @colleges.each do |college| %>
     <%= college['name'] %><br>
-    <%= college['web_page'] %>
+    <%= college['web_page'] %> <br>
+    <%=link_to("More Info", details_path(college['name'])) %>
     <hr>
 <% end %>
+<br>
+
+<%if @colleges.length > 10 %>
+<%= link_to 'Back', :back %>
+<%end %>

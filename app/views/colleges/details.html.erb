@@ -1,2 +1,41 @@
-<h1>Colleges#details</h1>
-<p>Find me in app/views/colleges/details.html.erb</p>
+<h1>Massive Amounts of College Data</h1>
+<h3>College: <%= @college_info["name"] %></h3>
+<!-- Can't use dot notation here @college_info.name because it's a hash not an object -->
+<h3>Country: <%= @college_info["country"] %></h3>
+
+<% if !@colleges.all.include?(@college_info["name"]) %>
+<%= simple_form_for([current_user, current_user.colleges.build]) do |f| %>
+	<%= f.hidden_field :name, :value => @college_info["name"] %>
+	<%= f.hidden_field :web_page, :value => @college_info["web_page"] %>
+	<%= f.hidden_field :country, :value => @college_info["country"] %>
+	<!-- This button hits the create action -->
+
+	
+
+
+		<%= f.button :submit, 'Favorite' %>
+
+<% end %>
+
+<%end %>
+
+<h2>This is all debugging stuff</h2>
+
+<%= link_to 'Back', user_colleges_path(:current_user) %> <br>
+<br>
+<%= @colleges.all %>
+<br>
+<%=@college_info["name"]%>
+<br>
+<%= @colleges.all.include?(@college_info["name"]) %>
+<br>
+class of @colleges <%= @colleges.klass %>
+<br>
+<br>
+
+
+
+<br>
+<% @colleges.each do |college| %>
+	<%=college.name%><br>
+<% end %>
