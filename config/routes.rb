@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'notes/create'
+
+  get 'notes/edit'
+
+  get 'notes/update'
+
+  get 'notes/destroy'
+
   devise_for :users
 	root 'welcome#index'
   get 'welcome' => 'welcome#index'

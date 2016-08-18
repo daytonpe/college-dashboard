@@ -35,6 +35,7 @@ class CollegesController < ApplicationController
   def add
   end
 
+
   def destroy
   	current_user.colleges.delete(@college)
     flash[:notice] = "College successfully deleted from your dashboard."
