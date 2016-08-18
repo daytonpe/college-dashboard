@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'colleges/index'
+
+  get 'colleges/show'
+
+  get 'colleges/search'
+
+  get 'colleges/details'
+
 	root 'welcome#index'
   get 'welcome' => 'welcome/index'
 
