@@ -1,2 +1,8 @@
-<h1>Colleges#search</h1>
-<p>Find me in app/views/colleges/search.html.erb</p>
+Render search results
+<h1>Results</h1>
+
+<% @colleges.each do |college| %>
+    <%= college['name'] %><br>
+    <%= college['web_page'] %>
+    <hr>
+<% end %>
