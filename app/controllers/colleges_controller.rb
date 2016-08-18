@@ -7,6 +7,9 @@ class CollegesController < ApplicationController
   def show
   end
 
+  def add
+  end
+
   def search
 		# create end point from search query and API url
     q = params[:q]

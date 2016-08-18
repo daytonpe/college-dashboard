@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get 'colleges/show'
 
-  get 'colleges/search'
+  get 'colleges/add'
 
   get 'colleges/details'
 
