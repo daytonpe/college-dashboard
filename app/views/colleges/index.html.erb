@@ -1,7 +1,7 @@
 <h1>My Favorite Colleges</h1>
 
 <% @colleges.each do |college| %>
-	<%= link_to(college.name, details_path(college.name)) %> | 
+	<%= link_to(college.name, college )%> | 
         <%= link_to 'Delete', college,
                 method: :delete, data: {confirm: 'Are you sure?'} %> |
         <%= link_to 'Notes', college_notes_path(college.id) %>

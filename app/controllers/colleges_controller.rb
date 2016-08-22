@@ -2,14 +2,19 @@ class CollegesController < ApplicationController
 	before_action :authenticate_user!
 	before_action :find_college, only: [:show, :destroy]
 
-  def index
+
+   def index
   	user = current_user
     if current_user == user
       @colleges = current_user.colleges
     else
 			flash[:alert] = "You do not have permission to access this page!"
       redirect_to root_path
-    end
+  	end
+  end
+
+  def show
+  	@college = College.find(params[:id])
   end
 
   def create

@@ -1,0 +1,11 @@
+<h1>Massive Amounts of College Data</h1>
+<p><strong>College: </strong><%= @college["name"] %></p>
+<!-- Can't use dot notation here @college.name because it's a hash not an object -->
+<p><strong>Country: </strong><%= @college["country"] %></p>
+<% if @college.notes.length > 0 %>
+	<h1>Notes</h1>
+<% end %>
+<% @college.notes.each do |note| %>
+	<%= note.body %>
+<% end %>
+

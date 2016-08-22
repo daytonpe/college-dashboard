@@ -1,22 +1,17 @@
 <h1>Massive Amounts of College Data</h1>
-<h3>College: <%= @college_info["name"] %></h3>
+<p><strong>College: </strong><%= @college_info["name"] %></p>
 <!-- Can't use dot notation here @college_info.name because it's a hash not an object -->
-<h3>Country: <%= @college_info["country"] %></h3>
+<p><strong>Country: </strong><%= @college_info["country"] %></p>
 
 <% if !@colleges.all.include?(@college_info["name"]) %>
-<%= simple_form_for([current_user, current_user.colleges.build]) do |f| %>
-	<%= f.hidden_field :name, :value => @college_info["name"] %>
-	<%= f.hidden_field :web_page, :value => @college_info["web_page"] %>
-	<%= f.hidden_field :country, :value => @college_info["country"] %>
-	<!-- This button hits the create action -->
-
-	
-
-
-		<%= f.button :submit, 'Favorite' %>
-
-<% end %>
-
+	<%= simple_form_for([current_user, current_user.colleges.build]) do |f| %>
+		<%= f.hidden_field :name, :value => @college_info["name"] %>
+		<%= f.hidden_field :web_page, :value => @college_info["web_page"] %>
+		<%= f.hidden_field :country, :value => @college_info["country"] %>
+		<!-- This button hits the create action -->
+		<br>
+			<%= f.button :submit, 'Favorite' %>
+	<%end %>
 <%end %>
 
 
@@ -26,8 +21,12 @@
 
 
 
-
-
+<br>
+<br>
+<br>
+<br>
+<hr>
+<hr>
 
 
 <h2>This is all debugging stuff</h2>

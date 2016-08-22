@@ -1,4 +1,18 @@
 class NotesController < ApplicationController
+  
+  def index
+  	user = current_user
+    if current_user == user
+      @colleges = current_user.colleges
+      @college = College.find_by(name: college_params[:name])
+      @notes = @college.notes
+    else
+			flash[:alert] = "You do not have permission to access this page!"
+      redirect_to root_path
+    end
+  end
+
+
   def create
   	@college = College.find(params[:college_id])
   	@note = @college.notes.build(note_params)

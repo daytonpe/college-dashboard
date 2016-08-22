@@ -1,11 +1,4 @@
 Rails.application.routes.draw do
-  get 'notes/create'
-
-  get 'notes/edit'
-
-  get 'notes/update'
-
-  get 'notes/destroy'
 
   devise_for :users
 	root 'welcome#index'
@@ -22,6 +15,7 @@ Rails.application.routes.draw do
   get 'add_colleges' => 'colleges#add'
   # college details route
   get 'details/:name' => 'colleges#details', as: 'details' # details_path(:name) => /details/:name
+  
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
