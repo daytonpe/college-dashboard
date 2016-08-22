@@ -3,7 +3,8 @@
 <% @colleges.each do |college| %>
 	<%= link_to(college.name, college )%> | 
         <%= link_to 'Delete', college,
-                method: :delete, data: {confirm: 'Are you sure?'} %>
+                method: :delete, data: {confirm: 'Are you sure?'} %> |
+
 	<hr>
 <% end %>
 <%= link_to 'Back', :back %>
