@@ -6,10 +6,23 @@
 
 <!-- LIST NOTES -->
 <% if @college.notes.length > 0 %>
-	<h1>Notes</h1>
+	<h3>Notes</h3>
 <% end %>
 <% @college.notes.each do |note| %>
-	<%= note.created_at.to_s+ ":  " +note.body %> <br>
+	
+	<!-- EDIT -->
+	<%= note.created_at.to_s+ ":  " +note.body %> | 
+	<%= link_to edit_note_path note do %>
+		<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+	<% end %> |
+	
+	<!-- DELETE -->
+	<%= link_to note, method: :delete, data: { confirm: 'Are you sure?' } do %>
+	<i class="fa fa-trash" aria-hidden="true"></i>
+	<% end %>	
+	
+	<!-- FORMATTING -->
+		<br><hr>
 <% end %>
 
 <br>

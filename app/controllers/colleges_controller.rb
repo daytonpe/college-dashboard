@@ -20,7 +20,6 @@ class CollegesController < ApplicationController
 
   def create
   	@colleges = College.all
-
     if @colleges.map(&:name).include?(college_params[:name])
       @college = College.find_by(name: college_params[:name])
       @college.users << current_user

@@ -27,37 +27,26 @@ class NotesController < ApplicationController
   end
 
   def edit
-  	if @note.user != current_user
-  		sign_out current_user
-  		redirect_to root_path
-  	end
+  	# @college = College.find(params[:id])
+  	@note = Note.find(params[:id])
   end
 
   def update
-  	if @note.user == current_user
-  		if @note.update(note_params)
-  			flash[:notice] = "Review updated successfully."
-  		else
-  			flash[:alert] = "Unable to update note."
-  			render :edit
-  		end
-  	else
-  		sign_out current_user
-  		redirect_to root_path
-  	end
+  	@note = Note.find(params[:id])
+  	@college = @note.college
+		if @note.update(note_params)
+			flash[:notice] = "Review updated successfully."
+			redirect_to @college
+		end
   end
 
   def destroy
+		@note = Note.find(params[:id])
   	@college = @note.college
-		if @note.user == current_user
-			@review.destroy
+			@note.destroy
 			flash[:alert] = "Note deleted successfully"
-			redirect_to redirect_to user_colleges_path(:current_user)
+			redirect_to @college
 
-		else
-			sign_out current_user
-			redirect_to root_path
-		end
 
   end
 
