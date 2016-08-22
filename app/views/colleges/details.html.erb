@@ -3,49 +3,14 @@
 <!-- Can't use dot notation here @college_info.name because it's a hash not an object -->
 <p><strong>Country: </strong><%= @college_info["country"] %></p>
 
-<% if !@colleges.all.include?(@college_info["name"]) %>
+<% if !current_user.colleges.map(&:name).include?(@college_info["name"]) %>
 	<%= simple_form_for([current_user, current_user.colleges.build]) do |f| %>
 		<%= f.hidden_field :name, :value => @college_info["name"] %>
 		<%= f.hidden_field :web_page, :value => @college_info["web_page"] %>
 		<%= f.hidden_field :country, :value => @college_info["country"] %>
 		<!-- This button hits the create action -->
 		<br>
-			<%= f.button :submit, 'Favorite' %>
-	<%end %>
-<%end %>
+		<%= f.button :submit, 'Favorite' %>
+	<% end %>
 
-
-
-
-
-
-
-
-<br>
-<br>
-<br>
-<br>
-<hr>
-<hr>
-
-
-<h2>This is all debugging stuff</h2>
-
-<%= link_to 'Back', user_colleges_path(:current_user) %> <br>
-<br>
-<%= @colleges.all %>
-<br>
-<%=@college_info["name"]%>
-<br>
-<%= @colleges.all.include?(@college_info["name"]) %>
-<br>
-class of @colleges <%= @colleges.klass %>
-<br>
-<br>
-
-
-
-<br>
-<% @colleges.each do |college| %>
-	<%=college.name%><br>
 <% end %>

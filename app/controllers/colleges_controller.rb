@@ -69,13 +69,7 @@ class CollegesController < ApplicationController
 	end
 
   def details
-  	user = current_user
-  	if current_user == user
-      @colleges = current_user.colleges
-    else
-			flash[:alert] = "You do not have permission to access this page!"
-      redirect_to root_path
-    end
+    @colleges = current_user.colleges
   	name = params[:name]
     url = "http://universities.hipolabs.com/search?name="
     end_point = url + name
