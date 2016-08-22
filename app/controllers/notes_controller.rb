@@ -19,6 +19,7 @@ class NotesController < ApplicationController
   	@note.user = current_user
   	if @college.save
   		flash[:notice] = "Note added successfully."
+  		redirect_to @college
   	else
   		flash[:alert] = "Note could not be added, please try again."
   		redirect_to user_colleges_path(:current_user)

@@ -15,6 +15,7 @@ class CollegesController < ApplicationController
 
   def show
   	@college = College.find(params[:id])
+  	@note = Note.new
   end
 
   def create

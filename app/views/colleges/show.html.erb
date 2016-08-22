@@ -2,10 +2,15 @@
 <p><strong>College: </strong><%= @college["name"] %></p>
 <!-- Can't use dot notation here @college.name because it's a hash not an object -->
 <p><strong>Country: </strong><%= @college["country"] %></p>
+
+
+<!-- LIST NOTES -->
 <% if @college.notes.length > 0 %>
 	<h1>Notes</h1>
 <% end %>
 <% @college.notes.each do |note| %>
-	<%= note.body %>
+	<%= note.created_at.to_s+ ":  " +note.body %> <br>
 <% end %>
 
+<br>
+<%= render 'colleges/form' %>
