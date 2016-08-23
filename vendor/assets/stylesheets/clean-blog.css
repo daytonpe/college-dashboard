@@ -34,9 +34,12 @@
 }
 
 #dash_title{
-  text-align: center
+  text-align: center;
 }
 
+.well{
+  text-align: center;
+}
 
 /*ORIGINAL CODE*/
 body {

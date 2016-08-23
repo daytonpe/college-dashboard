@@ -6,103 +6,114 @@
 
 		<div class="well dashboard-left" id="gold">			
 			<h3>Reach Schools</h3>
-			<% @colleges.each do |college| %>
+			<div class="row">
+				<% @colleges.each do |college| %>
 				<%if college.tier =="Reach" %>
-					<div class="well">
-						<h3>
-							<%= link_to(college.name, college )%>
-						</h3>
-						<strong>
-					    <%= link_to 'Delete', college, method: :delete, data: {confirm: 'Are you sure?'} %> 
-						</strong>
+					<div class="col-md-4">
+						<div class="well">						
+							<h3>
+								<%= link_to(college.name, college )%>
+							</h3>
+							<strong>
+						    <%= link_to 'Delete', college, method: :delete, data: {confirm: 'Are you sure?'} %> 
+							</strong>
 
-						<%= simple_form_for college do |f|%>
-							<%= f.input :tier, collection: [ "Reach", "Primary", "Secondary", "Tertiary"], prompt: 'Tier', label: false %>
-							  <p>
-	    					<%= f.button :submit, 'Update', class: 'btn btn-primary' %>
-	 			 				</p>
-						<% end %>
+							<%= simple_form_for college do |f|%>
+								<%= f.input :tier, collection: [ "Reach", "Primary", "Secondary", "Tertiary"], prompt: 'Tier', label: false %>
+								  <p>
+		    					<%= f.button :submit, 'Update', class: 'btn btn-primary' %>
+		 			 				</p>
+								<% end %>
+							</div>
 					</div>
 				<% end %>
-			<% end %>			
+			<% end %>	
+			</div>		
 		</div>
 
 
 		<div class="well dashboard-left" id="silver">			
-			<h3>Primary Tier</h3>
-			<% @colleges.each do |college| %>
+			<h3>Reach Schools</h3>
+			<div class="row">
+				<% @colleges.each do |college| %>
 				<%if college.tier =="Primary" %>
-					<div class="well">
-						<h3>
-							<%= link_to(college.name, college )%>
-						</h3>
-						<strong>
-					    <%= link_to 'Delete', college, method: :delete, data: {confirm: 'Are you sure?'} %> 
-						</strong>
+					<div class="col-md-4">
+						<div class="well">						
+							<h3>
+								<%= link_to(college.name, college )%>
+							</h3>
+							<strong>
+						    <%= link_to 'Delete', college, method: :delete, data: {confirm: 'Are you sure?'} %> 
+							</strong>
 
-						<%= simple_form_for college do |f|%>
-							<%= f.input :tier, collection: [ "Reach", "Primary", "Secondary", "Tertiary"], prompt: 'Tier', label: false %>
-							  <p>
-	    					<%= f.button :submit, 'Update', class: 'btn btn-primary' %>
-	 			 				</p>
-						<% end %>
+							<%= simple_form_for college do |f|%>
+								<%= f.input :tier, collection: [ "Reach", "Primary", "Secondary", "Tertiary"], prompt: 'Tier', label: false %>
+								  <p>
+		    					<%= f.button :submit, 'Update', class: 'btn btn-primary' %>
+		 			 				</p>
+								<% end %>
+							</div>
 					</div>
 				<% end %>
-			<% end %>
+			<% end %>	
+			</div>		
 		</div>
-
 
 		<div class="well dashboard-left" id="bronze">			
-			<h3>Secondary Tier</h3>
-			<% @colleges.each do |college| %>
+			<h3>Reach Schools</h3>
+			<div class="row">
+				<% @colleges.each do |college| %>
 				<%if college.tier =="Secondary" %>
-					<div class="well">
-						<h3>
-							<%= link_to(college.name, college )%>
-						</h3>
-						<strong>
-					    <%= link_to 'Delete', college, method: :delete, data: {confirm: 'Are you sure?'} %> 
-						</strong>
+					<div class="col-md-4">
+						<div class="well">						
+							<h3>
+								<%= link_to(college.name, college )%>
+							</h3>
+							<strong>
+						    <%= link_to 'Delete', college, method: :delete, data: {confirm: 'Are you sure?'} %> 
+							</strong>
 
-						<%= simple_form_for college do |f|%>
-							<%= f.input :tier, collection: [ "Reach", "Primary", "Secondary", "Tertiary"], prompt: 'Tier', label: false %>
-							  <p>
-	    					<%= f.button :submit, 'Update', class: 'btn btn-primary' %>
-	 			 				</p>
-						<% end %>
+							<%= simple_form_for college do |f|%>
+								<%= f.input :tier, collection: [ "Reach", "Primary", "Secondary", "Tertiary"], prompt: 'Tier', label: false %>
+								  <p>
+		    					<%= f.button :submit, 'Update', class: 'btn btn-primary' %>
+		 			 				</p>
+								<% end %>
+							</div>
 					</div>
 				<% end %>
-			<% end %>
+			<% end %>	
+			</div>		
 		</div>
-
 
 		<div class="well dashboard-left" id="fourth">			
-			<h3>Tertiary Tier</h3>
-			<% @colleges.each do |college| %>
+			<h3>Reach Schools</h3>
+			<div class="row">
+				<% @colleges.each do |college| %>
 				<%if college.tier =="Tertiary" %>
-					<div class="well">
-						<h3>
-							<%= link_to(college.name, college )%>
-						</h3>
-						<strong>
-					    <%= link_to 'Delete', college, method: :delete, data: {confirm: 'Are you sure?'} %> 
-						</strong>
+					<div class="col-md-4">
+						<div class="well">						
+							<h3>
+								<%= link_to(college.name, college )%>
+							</h3>
+							<strong>
+						    <%= link_to 'Delete', college, method: :delete, data: {confirm: 'Are you sure?'} %> 
+							</strong>
 
-						<%= simple_form_for college do |f|%>
-							<%= f.input :tier, collection: [ "Reach", "Primary", "Secondary", "Tertiary"], prompt: 'Tier', label: false %>
-							  <p>
-	    					<%= f.button :submit, 'Update', class: 'btn btn-primary' %>
-	 			 				</p>
-						<% end %>
+							<%= simple_form_for college do |f|%>
+								<%= f.input :tier, collection: [ "Reach", "Primary", "Secondary", "Tertiary"], prompt: 'Tier', label: false %>
+								  <p>
+		    					<%= f.button :submit, 'Update', class: 'btn btn-primary' %>
+		 			 				</p>
+								<% end %>
+							</div>
 					</div>
 				<% end %>
-			<% end %>
+			<% end %>	
+			</div>		
 		</div>
 
-
-
 	</div>
-
 	<div class="col-md-4">
 		<div class="well dashboard-right" id="other">
 			<h3>Unplaced Colleges</h3>

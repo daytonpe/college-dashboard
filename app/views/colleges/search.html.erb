@@ -5,7 +5,7 @@
 <br>
 
 <% @colleges.each do |college| %>
-    <%= college['name'] %><br>
+    <%= CGI::unescape_html(college['name']) %><br>
     <%= college['web_page'] %> <br>
     <%=link_to("More Info", details_path(college['name'])) %>
 
