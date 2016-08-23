@@ -1,29 +1,45 @@
-<h1>Massive Amounts of College Data</h1>
-<p><strong>College: </strong><%= @college["name"] %></p>
-<!-- Can't use dot notation here @college.name because it's a hash not an object -->
-<p><strong>Country: </strong><%= @college["country"] %></p>
+<div class="container">
+	<div class="row">
+
+		<div class="col-md-6">
+			<div class="well">
+				<h3>Information</h3>
+				<p><strong>College: </strong><%= @college["name"] %></p>
+				<!-- Can't use dot notation here @college.name because it's a hash not an object -->
+				<p><strong>Country: </strong><%= @college["country"] %></p>
+			</div>
+		</div>
+		
+		<div class="col-md-6">
+			<div class="well">
+				<!-- LIST NOTES -->
+					<% if @college.notes.length > 0 %>
+						<h3>Notes</h3>
+					<% end %>
+					<% @college.notes.each do |note| %>
+						
+						<!-- EDIT -->
+						<%= note.created_at.to_s+ ":  " +note.body %> | 
+						<%= link_to edit_note_path note do %>
+							<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+						<% end %> |
+						
+						<!-- DELETE -->
+						<%= link_to note, method: :delete, data: { confirm: 'Are you sure?' } do %>
+						<i class="fa fa-trash" aria-hidden="true"></i>
+						<% end %>	
+						
+						<!-- FORMATTING -->
+							<br><hr>
+					<% end %>
+		
+					<br>
+					<%= render 'colleges/form' %>
+			</div>
+		</div>
+		
+	</div>
+</div>
 
 
-<!-- LIST NOTES -->
-<% if @college.notes.length > 0 %>
-	<h3>Notes</h3>
-<% end %>
-<% @college.notes.each do |note| %>
-	
-	<!-- EDIT -->
-	<%= note.created_at.to_s+ ":  " +note.body %> | 
-	<%= link_to edit_note_path note do %>
-		<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-	<% end %> |
-	
-	<!-- DELETE -->
-	<%= link_to note, method: :delete, data: { confirm: 'Are you sure?' } do %>
-	<i class="fa fa-trash" aria-hidden="true"></i>
-	<% end %>	
-	
-	<!-- FORMATTING -->
-		<br><hr>
-<% end %>
 
-<br>
-<%= render 'colleges/form' %>

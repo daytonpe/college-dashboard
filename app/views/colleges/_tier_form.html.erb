@@ -1,0 +1,10 @@
+<%= simple_form_for college do |f|%>
+	<%= f.input :tier, collection: [ "Reach", "Primary", "Secondary", "Tertiary"], prompt: 'Tier', label: false %>
+	  <p>
+		<%= f.button :submit, 'Update', class: 'btn btn-primary' %>
+		</p>
+<% end %>
+
+<strong>
+  <%= link_to 'Delete', college, method: :delete, data: {confirm: 'Are you sure?'} %> 
+</strong>

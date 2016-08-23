@@ -11,6 +11,12 @@
 		<!-- This button hits the create action -->
 		<br>
 		<%= f.button :submit, 'Favorite', :class => "btn btn-primary"  %>
-	<% end %>
+<% end %>
+<% else %>
+		<%= college = current_user.find_by('name') %>
+		<strong>
+  		<%= link_to 'Delete', college, method: :delete, data: {confirm: 'Are you sure?'} %> 
+		</strong>
+
 
 <% end %>
