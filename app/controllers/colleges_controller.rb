@@ -40,6 +40,16 @@ class CollegesController < ApplicationController
   def add
   end
 
+  def update
+    @college = College.find(params[:id])
+    #@college.update is actually being called in the if line
+    if @college.update(college_params)
+      redirect_to user_colleges_path(current_user)
+    else
+      flash[:alert] = "Something went wrong, try again"
+      redirect_to user_colleges_path(current_user)
+    end
+  end
 
   def destroy
   	current_user.colleges.delete(@college)
@@ -85,6 +95,6 @@ class CollegesController < ApplicationController
     end
 
     def college_params
-    	params.require(:college).permit(:name, :web_page, :country)
+    	params.require(:college).permit(:name, :web_page, :country, :tier)
 		end
 end

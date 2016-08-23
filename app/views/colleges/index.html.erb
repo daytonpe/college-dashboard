@@ -37,10 +37,25 @@
 
 					<% @colleges.each do |college| %>
 					<div class="well">
-					<%= link_to(college.name, college )%>
-					<br> 
-				        <%= link_to 'Delete', college, method: :delete, data: {confirm: 'Are you sure?'} %> 
+					<h3>
+						<%= link_to(college.name, college )%>
+					</h3>
+					<strong>
+				    <%= link_to 'Delete', college, method: :delete, data: {confirm: 'Are you sure?'} %> 
+					</strong>
+
+					<%= simple_form_for college do |f|%>
+						<%= f.input :tier, collection: [ "Reach", "Primary", "Secondary", "Tertiary"], prompt: 'Tier', label: false %>
+						  <p>
+    					<%= f.button :submit, 'Update', class: 'btn btn-primary' %>
+ 			 				</p>
+					<% end %>
+
 					</div>
+
+
+
+
 				<% end %>
 		</div>
 	</div>

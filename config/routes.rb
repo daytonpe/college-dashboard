@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'welcome' => 'welcome#index'
 
   resources :users, only: [:show] do
-    resources :colleges, only: [:index, :show, :create, :destroy], shallow: true do
+    resources :colleges, except: [:new, :edit], shallow: true do
     	resources :notes, only: [:edit, :create, :update, :destroy], shallow: true
     	end
   end
