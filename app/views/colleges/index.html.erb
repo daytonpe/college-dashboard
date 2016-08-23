@@ -1,16 +1,6 @@
-<h1>My Favorite Colleges</h1>
-
-<% @colleges.each do |college| %>
-	<%= link_to(college.name, college )%> | 
-        <%= link_to 'Delete', college,
-                method: :delete, data: {confirm: 'Are you sure?'} %> |
-
-	<hr>
-<% end %>
-<%= link_to 'Back', :back %>
+<div class="container">
+<h1 id="dash_title"><%= current_user.email %>'s Dashboard</h1>
 <br>
-
-<div>
 	<div class="col-md-8">
 		<div class="well dashboard-left" id="gold">			
 			<h3>Reach Schools</h3>
@@ -44,26 +34,20 @@
 	<div class="col-md-4">
 		<div class="well dashboard-right" id="other">
 				<h3>Unplaced Colleges</h3>
-				<div class="well">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur harum quis, quasi aliquam quibusdam pariatur, cupiditate nemo ratione, culpa modi distinctio expedita excepturi neque accusamus animi voluptatem id deleniti eveniet?</p>
-				</div>
-				<div class="well">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur harum quis, quasi aliquam quibusdam pariatur, cupiditate nemo ratione, culpa modi distinctio expedita excepturi neque accusamus animi voluptatem id deleniti eveniet?</p>
-				</div>
-				<div class="well">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur harum quis, quasi aliquam quibusdam pariatur, cupiditate nemo ratione, culpa modi distinctio expedita excepturi neque accusamus animi voluptatem id deleniti eveniet?</p>
-				</div>				
-				<div class="well">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur harum quis, quasi aliquam quibusdam pariatur, cupiditate nemo ratione, culpa modi distinctio expedita excepturi neque accusamus animi voluptatem id deleniti eveniet?</p>
-				</div>
-				<div class="well">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur harum quis, quasi aliquam quibusdam pariatur, cupiditate nemo ratione, culpa modi distinctio expedita excepturi neque accusamus animi voluptatem id deleniti eveniet?</p>
-				</div>				
+
+					<% @colleges.each do |college| %>
+					<div class="well">
+					<%= link_to(college.name, college )%>
+					<br> 
+				        <%= link_to 'Delete', college, method: :delete, data: {confirm: 'Are you sure?'} %> 
+					</div>
+				<% end %>
 		</div>
 	</div>
 </div>
 
 
 
+<div><%= link_to 'Back', :back %></div>
 
 
