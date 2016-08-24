@@ -6,11 +6,8 @@
 
 /*PAT ADDITIONS*/
 
-.dashboard-left{
-  margin-right: 5px;
-}
-.dashboard-right{
-  margin-left: 5px;
+.center_it{
+  text-align: center;
 }
 
 #gold{

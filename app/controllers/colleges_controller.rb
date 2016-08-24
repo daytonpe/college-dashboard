@@ -40,6 +40,15 @@ class CollegesController < ApplicationController
   def add
   end
 
+  def reset
+    @colleges = current_user.colleges
+    @colleges.each do |college|
+      college.tier = nil
+      college.save
+    end
+    redirect_to user_colleges_path(current_user)
+  end
+
   def update
     @college = College.find(params[:id])
     #@college.update is actually being called in the if line
@@ -52,6 +61,8 @@ class CollegesController < ApplicationController
   end
 
   def destroy
+    @college.tier = nil
+    @college.save
   	current_user.colleges.delete(@college)
     flash[:notice] = "College successfully deleted from your dashboard."
     redirect_to user_colleges_path(:current_user)

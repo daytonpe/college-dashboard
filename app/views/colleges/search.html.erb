@@ -18,6 +18,9 @@
 				<!-- This button hits the create action -->
 				<%= f.button :submit, 'Favorite', :class => "btn btn-primary"  %>
 			<% end %>
+			<% else %>
+					<% college = current_user.colleges.find_by(:name => college["name"]) %>
+					<%= button_to "UnFavorite", college, :method => :delete, data: {confirm: 'Are you sure?'}, :class => "btn btn-danger"   %>
     <% end %>
 		<hr>
 <% end %>

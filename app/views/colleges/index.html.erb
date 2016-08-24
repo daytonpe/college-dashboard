@@ -1,5 +1,8 @@
-<div class="container">
-<h1 id="dash_title"><%= current_user.email %>'s Dashboard</h1>
+<div class="row">
+<div class="container">	
+	<h1 id="dash_title"><%= current_user.email[/[^@]*/].capitalize %>'s Dashboard</h1>
+	<h3><%= link_to('Reset', reset_path)%></h3>
+</div>
 <br>
 	<div class="col-md-8">
 
@@ -89,6 +92,6 @@
 
 
 
-<div><%= link_to 'Back', :back %></div>
+<h3><%= link_to 'Home', :back %></h3>
 
 

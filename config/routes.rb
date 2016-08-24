@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   get 'add_colleges' => 'colleges#add'
   # college details route
   get 'details/:name' => 'colleges#details', as: 'details' # details_path(:name) => /details/:name
+
+  get 'reset' => 'colleges#reset'
   
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

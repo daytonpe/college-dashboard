@@ -13,10 +13,8 @@
 		<%= f.button :submit, 'Favorite', :class => "btn btn-primary"  %>
 <% end %>
 <% else %>
-		<%= college = current_user.find_by('name') %>
-		<strong>
-  		<%= link_to 'Delete', college, method: :delete, data: {confirm: 'Are you sure?'} %> 
-		</strong>
+		<% college = current_user.colleges.find_by(:name => @college_info["name"]) %>
+		<%= button_to "UnFavorite", college, :method => :delete, data: {confirm: 'Are you sure?'}, :class => "btn btn-danger"   %>
 
 
 <% end %>
