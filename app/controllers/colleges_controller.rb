@@ -18,23 +18,10 @@ class CollegesController < ApplicationController
   	@note = Note.new
   end
 
-  def create
-  	@colleges = College.all
-    if @colleges.map(&:name).include?(college_params[:name])
-      @college = College.find_by(name: college_params[:name])
-      @college.users << current_user
-			flash[:notice] = "#{@college.name} successfully favorited."
-			redirect_to user_colleges_path(:current_user)
-    else
-			@college = current_user.colleges.build(college_params)
-			if current_user.save
-        flash[:notice] = "#{@college.name} successfully favorited."
-	    	redirect_to user_colleges_path(:current_user)
-			else
-	    	flash[:alert] = "Unable to favorite college."
-      	redirect_to user_colleges_path(:current_user)
-			end
-    end
+  def favorite
+    current_user.colleges.push(College.find(params[:id]))
+    current_user.save
+    redirect_to user_colleges_path(current_user)
   end
 
   def add
@@ -95,14 +82,15 @@ class CollegesController < ApplicationController
 	end
 
   def details
-    @colleges = current_user.colleges
-  	name = params[:name]
-    url = "http://universities.hipolabs.com/search?name="
-    end_point = url + name
-    #since this API sucks, only going to return country
-    response = RestClient.get(end_point)
-    # The [0] is because it returns an array of length 1
-    @college_info = JSON.parse(response.body)[0]
+  # OLD CODE USING API
+    #  @colleges = current_user.colleges
+    # name = params[:name]
+    #  url = "http://universities.hipolabs.com/search?name="
+    #  end_point = url + name
+    #  #since this API sucks, only going to return country
+    #  response = RestClient.get(end_point)
+    #  # The [0] is because it returns an array of length 1
+    #  @college_info = JSON.parse(response.body)[0]
   end
 
   private
@@ -111,6 +99,6 @@ class CollegesController < ApplicationController
     end
 
     def college_params
-    	params.require(:college).permit(:name, :web_page, :country, :tier)
+    	params.require(:college).permit(:name, :web_page, :country, :tier, :address, :city, :state, :zip, :phone)
 		end
 end

@@ -4,5 +4,21 @@
 <br>
 <br>
 
-<%=  @colleges.all%>
+<% @colleges.each do |college| %>
+		<%= college.name %> <br>
+    <%= college.web_page %> <br>
+    <%=link_to(college.name, details_path(college.id)) %>
 
+	  <% if current_user.colleges.include?(college) %>
+			<%= button_to "UnFavorite", college, :method => :delete, data: {confirm: 'Are you sure?'}, :class => "btn btn-danger"   %>
+		<% else %>
+			<%= button_to "Favorite", favorite_path(college), :class => "btn btn-primary" %>
+    <% end %>
+		<hr>
+<% end %>
+
+<br>
+
+<%if @colleges.length > 10 %>
+<%= link_to 'Back', :back %>
+<%end %>
