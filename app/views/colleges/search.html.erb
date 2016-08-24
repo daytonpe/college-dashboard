@@ -4,29 +4,5 @@
 <br>
 <br>
 
-<% @colleges.each do |college| %>
-    <%= CGI::unescape_html(college['name']) %><br>
-    <%= college['web_page'] %> <br>
-    <%=link_to("More Info", details_path(college['name'])) %>
+<%=  @colleges.all%>
 
-	  <% if !current_user.colleges.map(&:name).include?(college['name']) %>
-			<%= simple_form_for([current_user, current_user.colleges.build]) do |f| %>
-
-				<%= f.hidden_field :name, :value => college['name'] %>
-				<%= f.hidden_field :web_page, :value => college['web_page'] %>
-				<%= f.hidden_field :country, :value => college['country'] %>
-				<!-- This button hits the create action -->
-				<%= f.button :submit, 'Favorite', :class => "btn btn-primary"  %>
-			<% end %>
-			<% else %>
-					<% college = current_user.colleges.find_by(:name => college["name"]) %>
-					<%= button_to "UnFavorite", college, :method => :delete, data: {confirm: 'Are you sure?'}, :class => "btn btn-danger"   %>
-    <% end %>
-		<hr>
-<% end %>
-
-<br>
-
-<%if @colleges.length > 10 %>
-<%= link_to 'Back', :back %>
-<%end %>

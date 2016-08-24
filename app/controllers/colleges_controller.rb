@@ -69,8 +69,17 @@ class CollegesController < ApplicationController
   end
 
   def search
-    
-    
+
+    #q because that's what we called it in search.html.erb
+    @colleges = College.where("name ILIKE ?", "%#{params[:q]}%")
+    if @colleges
+      render :search
+    else
+      flash[:alert] = "Sorry, your search came back empty, please try again."
+      redirect_to root_path
+    end
+
+
     #OLD CODE USING API
   		# create end point from search query and API url
       # q = params[:q]
@@ -82,12 +91,7 @@ class CollegesController < ApplicationController
       # data = JSON.parse(response.body)
       # @colleges = data
     
-    if @colleges
-			render :search
-    else
-			flash[:alert] = "Sorry, your search came back empty, please try again."
-			redirect_to root_path
-    end
+
 	end
 
   def details
