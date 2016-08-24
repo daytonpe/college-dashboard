@@ -4,9 +4,17 @@
 		<div class="col-md-6">
 			<div class="well">
 				<h3>Information</h3>
-				<p><strong>College: </strong><%= @college["name"] %></p>
-				<!-- Can't use dot notation here @college.name because it's a hash not an object -->
-				<p><strong>Country: </strong><%= @college["country"] %></p>
+				<p><strong>College: </strong><%= @college.name %></p>
+				
+				<p>
+					<strong>URL: </strong>
+					<%= link_to(@college.web_page, "http://" + @college.web_page) %>
+				</p>
+				
+
+				<p><strong>Address: </strong><%= @college.address %>, <%= @college.city %>, <%= @college.state %> <%= @college.zip %></p>
+				<p><strong>Phone: </strong><%= @college.phone %></p>
+
 			</div>
 		</div>
 		
