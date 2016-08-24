@@ -69,17 +69,18 @@ class CollegesController < ApplicationController
   end
 
   def search
-		# create end point from search query and API url
-    q = params[:q]
-    url = "http://universities.hipolabs.com/search?name="
-    end_point = url + q
-
-    # make API call to end point, set result equal to response
-    response = RestClient.get(end_point)
-
-    # parse response.body and set result equal to data
-    data = JSON.parse(response.body)
-    @colleges = data
+    
+    
+    #OLD CODE USING API
+  		# create end point from search query and API url
+      # q = params[:q]
+      # url = "http://universities.hipolabs.com/search?name="
+      # end_point = url + q
+      # # make API call to end point, set result equal to response
+      # response = RestClient.get(end_point)
+      # # parse response.body and set result equal to data
+      # data = JSON.parse(response.body)
+      # @colleges = data
     
     if @colleges
 			render :search
