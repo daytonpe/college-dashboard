@@ -14,9 +14,10 @@ Rails.application.routes.draw do
   get 'search' => 'colleges#search' # search_path => /search
   get 'add_colleges' => 'colleges#add'
   # college details route
-  get 'details/:id' => 'colleges#details', as: 'details' # details_path(:name) => /details/:name
+  get 'details/:id' => 'colleges#details', as: 'details' # details_path(:id) => /details/:id
 
   get 'reset' => 'colleges#reset'
+  get 'untier/:id' => 'colleges#untier', as: 'untier'
   post 'favorite/:id' => 'colleges#favorite', as: 'favorite'
   
 

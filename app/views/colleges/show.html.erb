@@ -17,8 +17,93 @@
 
 			</div>
 		</div>
-		
+
+
+
 		<div class="col-md-6">
+			<div class="well">
+				<h3>Apply Checklist</h3>
+				<div class="row">
+				  <div class="col-md-4">
+				  	<h4>Due Diligence</h4>
+				  </div>
+				  <div class="col-md-8">
+				    <div class="input-group">
+				      <span class="input-group-addon">
+				        <input type="checkbox" aria-label="...">
+				      </span>
+				      <input type="text" class="form-control" aria-label="...">
+				    </div><!-- /input-group -->
+				  </div><!-- /.col-lg-6 -->
+				</div>
+				<div class="row">
+				  <div class="col-md-4">
+				  	<h4>Application</h4>
+				  </div>
+				  <div class="col-md-8">
+				    <div class="input-group">
+				      <span class="input-group-addon">
+				        <input type="checkbox" aria-label="...">
+				      </span>
+				      <input type="text" class="form-control" aria-label="...">
+				    </div><!-- /input-group -->
+				  </div><!-- /.col-lg-6 -->
+				</div>
+				<div class="row">
+				  <div class="col-md-4">
+				  	<h4>Due Diligence</h4>
+				  </div>
+				  <div class="col-md-8">
+				    <div class="input-group">
+				      <span class="input-group-addon">
+				        <input type="checkbox" aria-label="...">
+				      </span>
+				      <input type="text" class="form-control" aria-label="...">
+				    </div><!-- /input-group -->
+				  </div><!-- /.col-lg-6 -->
+				</div>
+				<div class="row">
+				  <div class="col-md-4">
+				  	<h4>Due Diligence</h4>
+				  </div>
+				  <div class="col-md-8">
+				    <div class="input-group">
+				      <span class="input-group-addon">
+				        <input type="checkbox" aria-label="...">
+				      </span>
+				      <input type="text" class="form-control" aria-label="...">
+				    </div><!-- /input-group -->
+				  </div><!-- /.col-lg-6 -->
+				</div>
+				<div class="row">
+				  <div class="col-md-4">
+				  	<h4>Due Diligence</h4>
+				  </div>
+				  <div class="col-md-8">
+				    <div class="input-group">
+				      <span class="input-group-addon">
+				        <input type="checkbox" aria-label="...">
+				      </span>
+				      <input type="text" class="form-control" aria-label="...">
+				    </div><!-- /input-group -->
+				  </div><!-- /.col-lg-6 -->
+				</div>
+				<div class="row">
+				  <div class="col-md-4">
+				  	<h4>Due Diligence</h4>
+				  </div>
+				  <div class="col-md-8">
+				    <div class="input-group">
+				      <span class="input-group-addon">
+				        <input type="checkbox" aria-label="...">
+				      </span>
+				      <input type="text" class="form-control" aria-label="...">
+				    </div><!-- /input-group -->
+				  </div><!-- /.col-lg-6 -->
+				</div>
+			</div>
+
+
 			<div class="well">
 				<!-- LIST NOTES -->
 					<% if @college.notes.length > 0 %>
@@ -27,7 +112,9 @@
 					<% @college.notes.each do |note| %>
 						
 						<!-- EDIT -->
-						<%= note.created_at.to_s+ ":  " +note.body %> | 
+						<%= date_format(note.created_at)%>
+						<br>
+						<%=note.body %> | 
 						<%= link_to edit_note_path note do %>
 							<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
 						<% end %> |
@@ -38,10 +125,9 @@
 						<% end %>	
 						
 						<!-- FORMATTING -->
-							<br><hr>
+						<hr>
 					<% end %>
 		
-					<br>
 					<%= render 'colleges/form' %>
 			</div>
 		</div>

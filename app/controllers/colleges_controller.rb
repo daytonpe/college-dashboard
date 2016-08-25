@@ -1,6 +1,6 @@
 class CollegesController < ApplicationController
 	before_action :authenticate_user!
-	before_action :find_college, only: [:show, :destroy]
+	before_action :find_college, only: [:untier, :show, :destroy]
 
 
    def index
@@ -80,6 +80,12 @@ class CollegesController < ApplicationController
     
 
 	end
+
+  def untier
+    @college.tier = nil
+    @college.save
+    redirect_to user_colleges_path(current_user)
+  end
 
   def details
   # OLD CODE USING API

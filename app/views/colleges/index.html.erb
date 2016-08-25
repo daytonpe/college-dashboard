@@ -14,7 +14,7 @@
 					<%if college.tier =="Reach" %>
 						<div class="col-md-4">
 							<div class="well">						
-								<h3><%= link_to(college.name, college )%></h3>
+								<h5><%= link_to(college.name, college )%></h5>
 								<%= render 'colleges/tier_form', :college => college   %>
 							</div>
 						</div>
@@ -31,7 +31,7 @@
 					<%if college.tier =="Primary" %>
 						<div class="col-md-4">
 							<div class="well">						
-								<h3><%= link_to(college.name, college )%></h3>
+								<h5><%= link_to(college.name, college )%></h5>
 								<%= render 'colleges/tier_form', :college => college   %>
 							</div>
 						</div>
@@ -47,7 +47,7 @@
 					<%if college.tier =="Secondary" %>
 						<div class="col-md-4">
 							<div class="well">						
-								<h3><%= link_to(college.name, college )%></h3>
+								<h5><%= link_to(college.name, college )%></h5>
 								<%= render 'colleges/tier_form', :college => college   %>
 							</div>
 						</div>
@@ -79,9 +79,9 @@
 			<% @colleges.each do |college| %>
 				<%if college.tier ==nil %>
 					<div class="well">
-						<h3>
+						<h5>
 							<%= link_to(college.name, college )%>
-						</h3>
+						</h5>
 								<%= render 'colleges/tier_form', :college => college   %>
 					</div>
 				<% end %>
