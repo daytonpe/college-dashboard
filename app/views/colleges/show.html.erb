@@ -16,100 +16,11 @@
 				<p><strong>Phone: </strong><%= @college.phone %></p>
 
 			</div>
-		</div>
-
-
-
-		<div class="col-md-6">
-			<div class="well">
-				<h3>Apply Checklist</h3>
-				<div class="row">
-				  <div class="col-md-4">
-				  	<h4>Due Diligence</h4>
-				  </div>
-				  <div class="col-md-8">
-				    <div class="input-group">
-				      <span class="input-group-addon">
-				        <input type="checkbox" aria-label="...">
-				      </span>
-				      <input type="text" class="form-control" aria-label="...">
-				    </div><!-- /input-group -->
-				  </div><!-- /.col-lg-6 -->
-				</div>
-				<div class="row">
-				  <div class="col-md-4">
-				  	<h4>Application</h4>
-				  </div>
-				  <div class="col-md-8">
-				    <div class="input-group">
-				      <span class="input-group-addon">
-				        <input type="checkbox" aria-label="...">
-				      </span>
-				      <input type="text" class="form-control" aria-label="...">
-				    </div><!-- /input-group -->
-				  </div><!-- /.col-lg-6 -->
-				</div>
-				<div class="row">
-				  <div class="col-md-4">
-				  	<h4>Due Diligence</h4>
-				  </div>
-				  <div class="col-md-8">
-				    <div class="input-group">
-				      <span class="input-group-addon">
-				        <input type="checkbox" aria-label="...">
-				      </span>
-				      <input type="text" class="form-control" aria-label="...">
-				    </div><!-- /input-group -->
-				  </div><!-- /.col-lg-6 -->
-				</div>
-				<div class="row">
-				  <div class="col-md-4">
-				  	<h4>Due Diligence</h4>
-				  </div>
-				  <div class="col-md-8">
-				    <div class="input-group">
-				      <span class="input-group-addon">
-				        <input type="checkbox" aria-label="...">
-				      </span>
-				      <input type="text" class="form-control" aria-label="...">
-				    </div><!-- /input-group -->
-				  </div><!-- /.col-lg-6 -->
-				</div>
-				<div class="row">
-				  <div class="col-md-4">
-				  	<h4>Due Diligence</h4>
-				  </div>
-				  <div class="col-md-8">
-				    <div class="input-group">
-				      <span class="input-group-addon">
-				        <input type="checkbox" aria-label="...">
-				      </span>
-				      <input type="text" class="form-control" aria-label="...">
-				    </div><!-- /input-group -->
-				  </div><!-- /.col-lg-6 -->
-				</div>
-				<div class="row">
-				  <div class="col-md-4">
-				  	<h4>Due Diligence</h4>
-				  </div>
-				  <div class="col-md-8">
-				    <div class="input-group">
-				      <span class="input-group-addon">
-				        <input type="checkbox" aria-label="...">
-				      </span>
-				      <input type="text" class="form-control" aria-label="...">
-				    </div><!-- /input-group -->
-				  </div><!-- /.col-lg-6 -->
-				</div>
-			</div>
-
 
 			<div class="well">
+				<h3>Notes</h3>
 				<!-- LIST NOTES -->
-					<% if @college.notes.length > 0 %>
-						<h3>Notes</h3>
-					<% end %>
-					<% @college.notes.each do |note| %>
+					<% @notes.each do |note| %>
 						
 						<!-- EDIT -->
 						<%= date_format(note.created_at)%>
@@ -130,6 +41,31 @@
 		
 					<%= render 'colleges/form' %>
 			</div>
+
+		</div>
+
+
+
+		<div class="col-md-6">
+			<div class="well">
+				<h3>Application Checklist</h3>
+
+			  <div class="form-group">
+          <input type="checkbox" name="fancy-checkbox-default" id="fancy-checkbox-default" autocomplete="off" />
+          <div class="btn-group">
+            <label for="fancy-checkbox-default" class="btn btn-default">
+              <span class="fa fa-check"></span>
+              <span> </span>
+            </label>
+            <label for="fancy-checkbox-default" class="btn btn-default active">
+              Download the Applicaton
+            </label>
+         	</div>
+
+			</div>
+
+
+
 		</div>
 		
 	</div>

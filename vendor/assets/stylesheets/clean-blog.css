@@ -4,40 +4,6 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 
-/*PAT ADDITIONS*/
-
-.center_it{
-  text-align: center;
-}
-
-#gold{
-  background-color: #D9A441;
-}
-
-#silver{
-  background-color: #A8A8A8;
-}
-
-#bronze{
-  background-color: #965A38;
-}
-
-#fourth{
-  background-color: #CCC2C2;
-}
-
-#other{
-  background-color: #6FA8E0;
-}
-
-#dash_title{
-  text-align: center;
-}
-
-.well{
-}
-
-/*ORIGINAL CODE*/
 body {
   font-family: 'Lora', 'Times New Roman', serif;
   font-size: 20px;

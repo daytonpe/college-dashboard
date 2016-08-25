@@ -1,0 +1,51 @@
+/*PAT ADDITIONS*/
+
+.center_it{
+  text-align: center;
+}
+
+#gold{
+  background-color: #D9A441;
+}
+
+#silver{
+  background-color: #A8A8A8;
+}
+
+#bronze{
+  background-color: #965A38;
+}
+
+#fourth{
+  background-color: #CCC2C2;
+}
+
+#other{
+  background-color: #6FA8E0;
+}
+
+#dash_title{
+  text-align: center;
+}
+
+.form-group input[type="checkbox"] {
+    display: none;
+}
+
+.form-group input[type="checkbox"] + .btn-group > label span {
+    width: 20px;
+}
+
+.form-group input[type="checkbox"] + .btn-group > label span:first-child {
+    display: none;
+}
+.form-group input[type="checkbox"] + .btn-group > label span:last-child {
+    display: inline-block;   
+}
+
+.form-group input[type="checkbox"]:checked + .btn-group > label span:first-child {
+    display: inline-block;
+}
+.form-group input[type="checkbox"]:checked + .btn-group > label span:last-child {
+    display: none;   
+}

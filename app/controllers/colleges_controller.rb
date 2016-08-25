@@ -15,6 +15,7 @@ class CollegesController < ApplicationController
 
   def show
   	@college = College.find(params[:id])
+    @notes = current_user.notes.where(college_id: @college.id)
   	@note = Note.new
   end
 
