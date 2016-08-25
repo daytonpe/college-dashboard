@@ -1,14 +1,14 @@
 class ChecklistsController < ApplicationController
   def toggle
   	@checklist = Checklist.find(params[:id])
-  	@checklist.download_application = !@checklist.download_application
+  	@checklist.c1 = !@checklist.c1
 
   	@checklist.save
-
-  	if @checklist.download_application
-          @checklist.count++
-       else
-          @checklist.count--
-       end
+  	redirect_to :back
+  	# if @checklist.c1
+   #    @checklist.count++
+   #  else
+   #    @checklist.count--
+   #  end
   end
 end

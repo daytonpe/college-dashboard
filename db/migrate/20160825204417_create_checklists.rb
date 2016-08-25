@@ -1,44 +1,44 @@
 class CreateChecklists < ActiveRecord::Migration[5.0]
   def change
     create_table :checklists do |t|
-      t.boolean :c1
-      t.boolean :c2
-      t.boolean :c3
-      t.boolean :c4
-      t.boolean :c5
-      t.boolean :c6
-      t.boolean :c7
-      t.boolean :c8
-      t.boolean :c9
-      t.boolean :c10
-      t.boolean :c11
-      t.boolean :c12
-      t.boolean :c13
-      t.boolean :c14
-      t.boolean :c15
-      t.boolean :c16
-      t.boolean :c17
-      t.boolean :c18
-      t.boolean :c19
-      t.boolean :c20
-      t.boolean :c21
-      t.boolean :c22
-      t.boolean :c23
-      t.boolean :c24
-      t.boolean :c25
-      t.boolean :c26
-      t.boolean :c27
-      t.boolean :c28
-      t.boolean :c29
-      t.boolean :c30
-      t.boolean :c31
-      t.boolean :c32
-      t.boolean :c33
-      t.boolean :c34
-      t.boolean :c35
-      t.boolean :c36
-      t.boolean :c37
-      t.integer :count
+      t.boolean :c1, :default =>false
+      t.boolean :c2, :default =>false
+      t.boolean :c3, :default =>false
+      t.boolean :c4, :default =>false
+      t.boolean :c5, :default =>false
+      t.boolean :c6, :default =>false
+      t.boolean :c7, :default =>false
+      t.boolean :c8, :default =>false
+      t.boolean :c9, :default =>false
+      t.boolean :c10, :default =>false
+      t.boolean :c11, :default =>false
+      t.boolean :c12, :default =>false
+      t.boolean :c13, :default =>false
+      t.boolean :c14, :default =>false
+      t.boolean :c15, :default =>false
+      t.boolean :c16, :default =>false
+      t.boolean :c17, :default =>false
+      t.boolean :c18, :default =>false
+      t.boolean :c19, :default =>false
+      t.boolean :c20, :default =>false
+      t.boolean :c21, :default =>false
+      t.boolean :c22, :default =>false
+      t.boolean :c23, :default =>false
+      t.boolean :c24, :default =>false
+      t.boolean :c25, :default =>false
+      t.boolean :c26, :default =>false
+      t.boolean :c27, :default =>false
+      t.boolean :c28, :default =>false
+      t.boolean :c29, :default =>false
+      t.boolean :c30, :default =>false
+      t.boolean :c31, :default =>false
+      t.boolean :c32, :default =>false
+      t.boolean :c33, :default =>false
+      t.boolean :c34, :default =>false
+      t.boolean :c35, :default =>false
+      t.boolean :c36, :default =>false
+      t.boolean :c37, :default =>false
+      t.integer :count, :default => 0
       t.references :user, foreign_key: true
       t.references :college, foreign_key: true
 

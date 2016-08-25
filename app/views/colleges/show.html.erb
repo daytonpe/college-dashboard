@@ -8,7 +8,7 @@
 				
 				<p>
 					<strong>URL: </strong>
-					<%= link_to(@college.web_page, "http://" + @college.web_page) %>
+					<%= link_to(@college.web_page.downcase, "http://" + @college.web_page) %>
 				</p>
 				
 
@@ -49,18 +49,29 @@
 		<div class="col-md-6">
 			<div class="well">
 			<h3>Application Checklist</h3>
-		  <!-- <div class="form-group">
-        <input type="checkbox" name="fancy-checkbox-default" id="c1" autocomplete="off" />
-        <div class="btn-group">
-          <label for="c1" class="btn btn-default">
-            <span class="fa fa-check"></span>
-            <span> </span>
-          </label>
-          <label for="fancy-checkbox-default" class="btn btn-default active">
-            Download the Applicaton
-          </label>
-       	</div> -->
+
+		  <div class="form-group">
+        <input type="checkbox" name="fancy-checkbox-default" id="fancy-checkbox-default" autocomplete="off" />
+				<a href="/toggle/<%= @checklist.id %>">          
+        	<div class="btn-group">
+						<label for="fancy-checkbox-default" class="btn btn-default">
+	            <% if @checklist.c1 == false %>
+	            	<span> </span>
+	            <% else %>
+	            	<span class="fa fa-check"></span>
+	            <% end %>
+	          </label>
+	          <label for="c1" class="btn btn-default active">
+	            Download the Applicaton	(<%= @checklist.c1 %>)
+	          </label>
+       		</div>
+        </a>
 			</div>
+
+
+
+
+
 		</div>
 	</div>
 </div>

@@ -15,15 +15,18 @@ class CollegesController < ApplicationController
 
   def show
   	@college = College.find(params[:id])
+    @checklist = current_user.checklists.find_by(college_id: params[:id])
     @notes = current_user.notes.where(college_id: @college.id)
   	@note = Note.new
   end
 
   def favorite
-    college=College.find(params[:id])
-    checklist = ??
-    current_user.college.checklist = checklist
-    current_user.colleges.push(college)
+    @college = College.find(params[:id])
+    checklist = Checklist.create 
+    checklist.user = current_user
+    checklist.college = @college
+    checklist.save
+    current_user.colleges.push(@college)
     current_user.save
     redirect_to user_colleges_path(current_user)
   end
