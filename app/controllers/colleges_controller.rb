@@ -20,7 +20,10 @@ class CollegesController < ApplicationController
   end
 
   def favorite
-    current_user.colleges.push(College.find(params[:id]))
+    college=College.find(params[:id])
+    checklist = ??
+    current_user.college.checklist = checklist
+    current_user.colleges.push(college)
     current_user.save
     redirect_to user_colleges_path(current_user)
   end
@@ -67,19 +70,6 @@ class CollegesController < ApplicationController
       redirect_to root_path
     end
 
-
-    #OLD CODE USING API
-  		# create end point from search query and API url
-      # q = params[:q]
-      # url = "http://universities.hipolabs.com/search?name="
-      # end_point = url + q
-      # # make API call to end point, set result equal to response
-      # response = RestClient.get(end_point)
-      # # parse response.body and set result equal to data
-      # data = JSON.parse(response.body)
-      # @colleges = data
-    
-
 	end
 
   def untier
@@ -89,15 +79,7 @@ class CollegesController < ApplicationController
   end
 
   def details
-  # OLD CODE USING API
-    #  @colleges = current_user.colleges
-    # name = params[:name]
-    #  url = "http://universities.hipolabs.com/search?name="
-    #  end_point = url + name
-    #  #since this API sucks, only going to return country
-    #  response = RestClient.get(end_point)
-    #  # The [0] is because it returns an array of length 1
-    #  @college_info = JSON.parse(response.body)[0]
+
   end
 
   private

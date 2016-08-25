@@ -5,5 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :notes
+
+  # each checklist is an item within the overall checklist
+  has_many :checklists
   has_and_belongs_to_many :colleges
 end

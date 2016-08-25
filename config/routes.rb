@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   get 'reset' => 'colleges#reset'
   get 'untier/:id' => 'colleges#untier', as: 'untier'
+  get 'toggle/:id' => 'checklists#toggle', as: 'toggle'
   post 'favorite/:id' => 'colleges#favorite', as: 'favorite'
   
 
