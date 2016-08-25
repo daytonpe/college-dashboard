@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 
-		<div class="col-md-6">
+		<div class="col-md-5">
 			<div class="well">
 				<h3>Information</h3>
 				<p><strong>College: </strong><%= @college.name %></p>
@@ -52,7 +52,7 @@
 			"c5" => "Request midyear grade report sent",
 			"c6" => "Find out if an admission test is required",
 			"c7" => "Take an admission test, if required",
-			"c8" => "Take other required or recommended tests (e.g., SAT Subject Tests, AP Exams, IB exams)",
+			"c8" => "Take other required or recommended tests",
 			"c9" => "Send admission-test scores",
 			"c10" => "Send other test scores",
 			"c11" => "Request recommendation letters",
@@ -86,28 +86,29 @@
 
 
 
-		<div class="col-md-6">
+		<div class="col-md-7">
 			<div class="well">
 			<h3>Application Checklist</h3>
 
 		  <div class="form-group">
-        <input type="checkbox" name="fancy-checkbox-default" id="fancy-checkbox-default" autocomplete="off" />
-				<a href="/toggle/<%= @checklist.id %>">          
+			<% items.each do |key, value| %>
+        <input type="checkbox" name="fancy-checkbox-default" id="<%= key %>" autocomplete="off" />
+				<a href="/colleges/<%= @checklist.id %>/update/<%= key %>">          
         	<div class="btn-group">
 						<label for="fancy-checkbox-default" class="btn btn-default">
-	            <% if @checklist.c1 == false %>
+	            <% if @checklist[key] == false %>
 	            	<span> </span>
 	            <% else %>
 	            	<span class="fa fa-check"></span>
 	            <% end %>
 	          </label>
 	          <label for="c1" class="btn btn-default active">
-	            Download the Applicaton	(<%= @checklist.c1 %>)
+	            <%=value %>	(<%= @checklist[key] %>)
 	          </label>
        		</div>
         </a>
+			<% end %>
 			</div>
-
 
 
 

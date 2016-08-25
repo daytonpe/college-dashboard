@@ -1,7 +1,7 @@
 class ChecklistsController < ApplicationController
   def toggle
   	@checklist = Checklist.find(params[:id])
-  	@checklist.c1 = !@checklist.c1
+  	@checklist[params[:attr]] = !@checklist[params[:attr]]
 
   	@checklist.save
   	redirect_to :back

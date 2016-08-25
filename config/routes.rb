@@ -18,9 +18,9 @@ Rails.application.routes.draw do
 
   get 'reset' => 'colleges#reset'
   get 'untier/:id' => 'colleges#untier', as: 'untier'
-  get 'toggle/:id' => 'checklists#toggle', as: 'toggle'
+  # get 'toggle/:id' => 'checklists#toggle', as: 'toggle'
   post 'favorite/:id' => 'colleges#favorite', as: 'favorite'
-  
+  get '/colleges/:id/update/:attr' => 'checklists#toggle', as: 'toggle'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
