@@ -1,5 +1,9 @@
 /*PAT ADDITIONS*/
 
+.checked_green{
+  background-color: green;
+}
+
 .center_it{
   text-align: center;
 }

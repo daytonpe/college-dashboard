@@ -47,7 +47,7 @@
 		<% items = { 
 			"c1" => "Get the application", 
 			"c2" => "Make a note of the regular application deadline",
-			"c3" => "Make a note of the early application deadli",
+			"c3" => "Make a note of the early application deadline",
 			"c4" => "Request high school transcript sent",
 			"c5" => "Request midyear grade report sent",
 			"c6" => "Find out if an admission test is required",
@@ -89,7 +89,6 @@
 		<div class="col-md-7">
 			<div class="well">
 			<h3>Application Checklist</h3>
-			<h3>Counter: </h3> <%= @checklist.count %>
 
 		  <div class="form-group">
 			<% items.each do |key, value| %>
@@ -104,7 +103,7 @@
 	            <% end %>
 	          </label>
 	          <label for="c1" class="btn btn-default active">
-	            <%=value %>	(<%= @checklist[key] %>)
+	            <%=value %>
 	          </label>
        		</div>
         </a>

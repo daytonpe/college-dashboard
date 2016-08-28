@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
 	root 'welcome#index'
   get 'welcome' => 'welcome#index'
+  get 'instructions' => 'welcome#instructions'
 
   resources :users, only: [:show] do
     resources :colleges, except: [:new, :edit], shallow: true do
