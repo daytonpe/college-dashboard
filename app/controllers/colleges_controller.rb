@@ -20,6 +20,9 @@ class CollegesController < ApplicationController
   	@note = Note.new
   end
 
+  def print_dashboard
+  end
+
   def favorite
     @college = College.find(params[:id])
     checklist = Checklist.create 

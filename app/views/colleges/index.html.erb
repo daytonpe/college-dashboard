@@ -2,6 +2,7 @@
 <div class="container">	
 	<h1 id="dash_title"><%= current_user.email[/[^@]*/].capitalize %>'s Dashboard</h1>
 	<h3><%= link_to('Reset', reset_path)%></h3>
+	<h3><%= link_to('Printable Version', print_dashboard_path) %></h3>
 </div>
 <br>
 	<div class="col-md-8">

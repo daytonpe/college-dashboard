@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 	root 'welcome#index'
   get 'welcome' => 'welcome#index'
   get 'instructions' => 'welcome#instructions'
+  get 'print_dashboard' => 'colleges#print_dashboard'
 
   resources :users, only: [:show] do
     resources :colleges, except: [:new, :edit], shallow: true do
