@@ -95,11 +95,11 @@
         <input type="checkbox" name="fancy-checkbox-default" id="<%= key %>" autocomplete="off" />
 				<a href="/colleges/<%= @checklist.id %>/update/<%= key %>">          
         	<div class="btn-group">
-						<label for="fancy-checkbox-default" class="btn btn-default">
+						<label for="fancy-checkbox-default" class="<%= @checklist[key] ? 'btn btn-success' : 'btn btn-default' %>">
 	            <% if @checklist[key] == false %>
-	            	<span> </span>
+	            	<span>   </span>
 	            <% else %>
-	            	<span class="fa fa-check"></span>
+	            	<span class="fa fa-graduation-cap"></span>
 	            <% end %>
 	          </label>
 	          <label for="c1" class="btn btn-default active">
