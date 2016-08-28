@@ -4,11 +4,19 @@
 		<%= f.button :submit, 'Update', class: 'btn btn-primary' %>
 		</p>
 <% end %>
+<br>
+
+
+<p><%= (100*(current_user.checklists.find_by(college_id: college.id).count.to_f)/37).round %>% complete</p>
+
+<br>
+
 
 <strong>
   <%= link_to 'Delete', college, method: :delete, data: {confirm: 'Are you sure?'} %> 
 </strong>
 
+<br>
 
 <strong><%= link_to('Untier', untier_path(college))%></strong>
 
