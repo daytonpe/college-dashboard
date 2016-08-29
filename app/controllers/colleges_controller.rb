@@ -21,6 +21,7 @@ class CollegesController < ApplicationController
   end
 
   def print_dashboard
+    @colleges = current_user.colleges
   end
 
   def favorite

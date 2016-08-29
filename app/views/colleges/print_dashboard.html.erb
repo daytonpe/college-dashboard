@@ -1,1 +1,56 @@
-<h3>Printable version of your dashboard</h3>
+<h1><%= current_user.email[/[^@]*/].capitalize %>'s Dashboard</h1>
+<br>
+
+<strong>Reach Schools</strong>
+<% @colleges.each do |college| %>
+	<ul>
+	<%if college.tier =="Reach" %>
+		<li><%= college.name%> --<%= (100*(current_user.checklists.find_by(college_id: college.id).count.to_f)/37).round %>%</li>
+	<% end %>
+	</ul>
+<% end %>
+<strong>Primary Schools</strong>
+<% @colleges.each do |college| %>
+	<ul>
+	<%if college.tier =="Primary" %>
+		<li><%= college.name%> --<%= (100*(current_user.checklists.find_by(college_id: college.id).count.to_f)/37).round %>%</li>
+	<% end %>
+	</ul>
+<% end %>
+<strong>Secondary Schools</strong>
+<% @colleges.each do |college| %>
+	<ul>
+	<%if college.tier =="Secondary" %>
+		<li><%= college.name%> --<%= (100*(current_user.checklists.find_by(college_id: college.id).count.to_f)/37).round %>%</li>
+	<% end %>
+	</ul>
+<% end %>
+<strong>Tertiary Schools</strong>
+<% @colleges.each do |college| %>
+	<ul>
+	<%if college.tier =="Tertiary" %>
+		<li><%= college.name%> --<%= (100*(current_user.checklists.find_by(college_id: college.id).count.to_f)/37).round %>%</li>
+	<% end %>
+	</ul>
+<% end %>
+<p style="page-break-after:always;"></p>
+
+
+<% @colleges.each do |college| %>
+		<em><h2><%= college.name%></h2></em>
+		<strong>URL: </strong><%= college.web_page.downcase%>
+		<br>
+		<strong>Address: </strong><%= college.address %>, <%= college.city %>, <%= college.state %> <%= college.zip %>
+		<br>
+		<strong>Phone: </strong><%= college.phone %>
+
+
+		<ul>
+			<% college.notes.each do |note| %>
+				<li><%= note.body %></li>
+			<% end %>
+		</ul>
+		<p style="page-break-after:always;"></p>
+<% end %>	
+
+<hr>

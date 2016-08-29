@@ -1,10 +1,4 @@
 <div class="row">
-<div class="container">	
-	<h1 id="dash_title"><%= current_user.email[/[^@]*/].capitalize %>'s Dashboard</h1>
-	<h3><%= link_to('Reset', reset_path)%></h3>
-	<h3><%= link_to('Printable Version', print_dashboard_path) %></h3>
-</div>
-<br>
 	<div class="col-md-8">
 
 	
@@ -13,12 +7,12 @@
 			<div class="row">
 				<% @colleges.each do |college| %>
 					<%if college.tier =="Reach" %>
-						<div class="col-md-4">
+
 							<div class="well">						
 								<h5><%= link_to(college.name, college )%></h5>
-								<%= render 'colleges/tier_form', :college => college   %>
+								<%= render 'colleges/tier_form_2', :college => college   %>
 							</div>
-						</div>
+
 					<% end %>
 				<% end %>	
 			</div>		
@@ -96,3 +90,8 @@
 <h3><%= link_to 'Home', :back %></h3>
 
 
+<div class="container">	
+	<h1 id="dash_title"><%= current_user.email[/[^@]*/].capitalize %>'s Dashboard</h1>
+	<h3><%= link_to('Reset', reset_path)%></h3>
+	<h3><%= link_to('Printable Version', print_dashboard_path) %></h3>
+</div>

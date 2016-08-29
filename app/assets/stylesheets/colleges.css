@@ -1,4 +1,7 @@
-/*PAT ADDITIONS*/
+.well{
+  border-color: black;
+  background-color: #FAF0E6;
+}
 
 .checked_green{
   background-color: green;
@@ -7,7 +10,7 @@
 .center_it{
   text-align: center;
 }
-
+/*
 #gold{
   background-color: #D9A441;
 }
@@ -26,7 +29,7 @@
 
 #other{
   background-color: #6FA8E0;
-}
+}*/
 
 #dash_title{
   text-align: center;

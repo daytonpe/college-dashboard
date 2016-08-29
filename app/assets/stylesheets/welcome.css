@@ -1,0 +1,25 @@
+.title{
+	text-align: center;
+}
+
+table, img {
+  border: 0;
+  border-style: solid;
+	border-collapse: collapse;
+	border-width: 3px;
+	text-align: center;
+	margin: 0px auto;
+}
+
+table td, table th {
+    border: 3px solid black;
+}
+
+.img-med{
+	width: 50%;
+	height: 50%;
+}
+
+.blue_link{
+	color: blue;
+}
