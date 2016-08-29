@@ -9,8 +9,10 @@
   </head>
 
   <body>
-
+  
+  <% unless(current_page?(print_dashboard_path)) %>
     <%= render 'layouts/header' %>
+  <% end %>
 
 
   

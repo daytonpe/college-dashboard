@@ -1,66 +1,58 @@
+
+	<p id="reset"><%= link_to('Reset', reset_path)%></p>
+	<p id="printable"><%= link_to('Printable Version', print_dashboard_path) %></p>
+
 <div class="row">
 	<div class="col-md-8">
 
 	
-		<div class="well" id="gold">			
-			<h3>Reach Schools</h3>
+		<div class="well tier-box" id="first">			
+			<div class="center"><h3>Reach Schools</h3></div>
 			<div class="row">
 				<% @colleges.each do |college| %>
 					<%if college.tier =="Reach" %>
-
-							<div class="well">						
-								<h5><%= link_to(college.name, college )%></h5>
-								<%= render 'colleges/tier_form_2', :college => college   %>
-							</div>
-
+						<div class="well">						
+							<%= render 'colleges/tier_form', :college => college   %>
+						</div>
 					<% end %>
 				<% end %>	
 			</div>		
 		</div>
 
 
-		<div class="well" id="silver">			
-			<h3>Primary Schools</h3>
+		<div class="well tier-box" id="second">			
+			<div class="center"><h3>Primary Schools</h3></div>
 			<div class="row">
 				<% @colleges.each do |college| %>
 					<%if college.tier =="Primary" %>
-						<div class="col-md-4">
-							<div class="well">						
-								<h5><%= link_to(college.name, college )%></h5>
-								<%= render 'colleges/tier_form', :college => college   %>
-							</div>
+						<div class="well">						
+							<%= render 'colleges/tier_form', :college => college   %>
 						</div>
 					<% end %>
 				<% end %>	
 			</div>		
 		</div>
 
-		<div class="well" id="bronze">			
-			<h3>Secondary Schools</h3>
+		<div class="well tier-box" id="third">			
+			<div class="center"><h3>Secondary Schools</h3></div>
 			<div class="row">
 				<% @colleges.each do |college| %>
 					<%if college.tier =="Secondary" %>
-						<div class="col-md-4">
-							<div class="well">						
-								<h5><%= link_to(college.name, college )%></h5>
-								<%= render 'colleges/tier_form', :college => college   %>
-							</div>
+						<div class="well">						
+							<%= render 'colleges/tier_form', :college => college   %>
 						</div>
 					<% end %>
 				<% end %>	
 			</div>		
 		</div>
 
-		<div class="well" id="tertiary">			
-			<h3>Tertiary Schools</h3>
+		<div class="well tier-box" id="fourth">			
+			<div class="center"><h3>Tertiary Schools</h3></div>
 			<div class="row">
 				<% @colleges.each do |college| %>
 					<%if college.tier =="Tertiary" %>
-						<div class="col-md-4">
-							<div class="well">						
-								<h3><%= link_to(college.name, college )%></h3>
-								<%= render 'colleges/tier_form', :college => college   %>
-							</div>
+						<div class="well">						
+							<%= render 'colleges/tier_form', :college => college   %>
 						</div>
 					<% end %>
 				<% end %>	
@@ -69,8 +61,8 @@
 
 	</div>
 	<div class="col-md-4">
-		<div class="well" id="other">
-			<h3>Unplaced Colleges</h3>
+		<div class="well tier-box" id="other">
+			<div class="center"><h3>Unplaced Schools</h3></div>
 			<% @colleges.each do |college| %>
 				<%if college.tier ==nil %>
 					<div class="well">
@@ -87,11 +79,4 @@
 
 
 
-<h3><%= link_to 'Home', :back %></h3>
-
-
-<div class="container">	
-	<h1 id="dash_title"><%= current_user.email[/[^@]*/].capitalize %>'s Dashboard</h1>
-	<h3><%= link_to('Reset', reset_path)%></h3>
-	<h3><%= link_to('Printable Version', print_dashboard_path) %></h3>
-</div>
+	<!-- <h1 id="dash_title"><%= current_user.email[/[^@]*/].capitalize %>'s Dashboard</h1> -->

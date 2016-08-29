@@ -24,16 +24,16 @@
 						
 						<!-- EDIT -->
 						<%= date_format(note.created_at)%>
-						<br>
-						<%=note.body %> | 
 						<%= link_to edit_note_path note do %>
 							<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-						<% end %> |
+						<% end %>
 						
 						<!-- DELETE -->
 						<%= link_to note, method: :delete, data: { confirm: 'Are you sure?' } do %>
 						<i class="fa fa-trash" aria-hidden="true"></i>
 						<% end %>	
+						<br>
+						<%=note.body %>
 						
 						<!-- FORMATTING -->
 						<hr>

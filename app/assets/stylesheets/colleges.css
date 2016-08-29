@@ -3,6 +3,10 @@
   background-color: #FAF0E6;
 }
 
+.center{
+  text-align: center
+}
+
 .checked_green{
   background-color: green;
 }
@@ -10,26 +14,12 @@
 .center_it{
   text-align: center;
 }
-/*
-#gold{
-  background-color: #D9A441;
-}
 
-#silver{
-  background-color: #A8A8A8;
+.tier-box{
+  border: 0px;
+  background-color: transparent;
+  box-shadow: none;
 }
-
-#bronze{
-  background-color: #965A38;
-}
-
-#fourth{
-  background-color: #CCC2C2;
-}
-
-#other{
-  background-color: #6FA8E0;
-}*/
 
 #dash_title{
   text-align: center;
@@ -70,4 +60,31 @@
     border-top-right-radius: 0;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
+}
+
+.update-college button {
+  background: none;
+  border: none;
+  display: inline;
+}
+
+.update-college-h4 {
+  display: inline;
+}
+
+.update-college-inputs {
+  display: inline-block;
+  float: left;
+}
+
+.progress {
+  clear: both;
+}
+
+.h4-trash-undo {
+  float: left;
+}
+
+.no-outline{
+  border-style: dashed;
 }
