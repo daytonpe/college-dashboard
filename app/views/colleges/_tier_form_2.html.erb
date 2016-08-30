@@ -1,32 +1,39 @@
-<%= simple_form_for college do |f|%>
-	<%= f.input :tier, collection: [ "Reach", "Primary", "Secondary", "Tertiary"], prompt: 'Tier', label: false %>
-	  <p>
-		<%= f.button :submit, 'Update', class: 'btn btn-primary' %>
+<div class="row center">
 
-		</p>
-<% end %>
+		<h4 class="update-college-h4"><%= link_to(college.name, college ) %></h4>
+		<%= link_to college, method: :delete, data: {confirm: 'Are you sure?'} do%> 
+			<i class="fa fa-trash-o"></i>
+		<% end %>
+		<%= link_to untier_path(college) do%> 
+			<i class="fa fa-undo"></i>
+		<% end %>
+</div>
+
+<div class="row center">	
+	<%= simple_form_for college do |f|%>
+		<div class="update-college-inputs">
+			<%= f.input :tier, collection: [ "Reach", "Primary", "Secondary", "Tertiary"], prompt: 'Tier', label: false %>
+			</div>
+		<div class="update-college">
+			<%= button_tag "", type: 'submit', class: "fa fa-check" %>
+		</div>
+	<% end %>
+</div>
 
 
 <% percent = (100*(current_user.checklists.find_by(college_id: college.id).count.to_f)/37).round %>
-
-
 <% if percent >0 %>
 	<% started = true %>
 <% else %>
 	<% started = false %>
 <% end %>
 
-<div class="progress">
-  <div class="<%= started ? 'progress-bar progress-bar-success' : 'progress-bar progress-bar-danger' %>" role="progressbar" aria-valuenow='100' aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: <%= percent %>%;">
-		<%= percent %>%
-  </div>
-</div>
 
-<strong>
-  <%= link_to 'Delete', college, method: :delete, data: {confirm: 'Are you sure?'} %> 
-</strong>
-
-<br>
-
-<strong><%= link_to('Untier', untier_path(college))%></strong>
+<a href="/colleges/<%= college.id %>">
+	<div class="progress">
+	  <div class="<%= started ? 'progress-bar progress-bar-success' : 'progress-bar progress-bar-danger' %>" role="progressbar" aria-valuenow='100' aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: <%= percent %>%;">
+			<%= percent %>%
+	  </div>
+	</div>
+</a>
 

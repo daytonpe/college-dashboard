@@ -2,6 +2,10 @@
 	text-align: center;
 }
 
+.center{
+	text-align: center;
+}
+
 table, img {
   border: 0;
   border-style: solid;
@@ -20,6 +24,29 @@ table td, table th {
 	height: 50%;
 }
 
-.blue_link{
-	color: blue;
+.link{
+	color: #7B5139;
+}
+
+.jumbotron {
+	background: none;
+}
+
+/*.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 100px;
+    padding-right: 100px;
+}*/
+
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
 }

@@ -1,6 +1,11 @@
-
-	<p id="reset"><%= link_to('Reset', reset_path)%></p>
-	<p id="printable"><%= link_to('Printable Version', print_dashboard_path) %></p>
+<div class= "row">
+	<div class="col-md-6">
+		<%= button_to "Reset All", reset_path, class: "btn btn-custom pull-right", :method => :get %>
+	</div>
+	<div class="col-md-6">
+		<%= button_to "Printable Version", print_dashboard_path, class: "btn btn-custom", :method => :get %>
+	</div>
+</div>
 
 <div class="row">
 	<div class="col-md-8">
@@ -66,10 +71,7 @@
 			<% @colleges.each do |college| %>
 				<%if college.tier ==nil %>
 					<div class="well">
-						<h5>
-							<%= link_to(college.name, college )%>
-						</h5>
-								<%= render 'colleges/tier_form', :college => college   %>
+						<%= render 'colleges/tier_form_2', :college => college   %>
 					</div>
 				<% end %>
 			<% end %>

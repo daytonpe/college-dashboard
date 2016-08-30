@@ -4,16 +4,17 @@
 }
 
 .center{
-  text-align: center
+  text-align: center;
+}
+
+.middle{
+  vertical-align: middle;
 }
 
 .checked_green{
   background-color: green;
 }
 
-.center_it{
-  text-align: center;
-}
 
 .tier-box{
   border: 0px;
@@ -74,7 +75,10 @@
 
 .update-college-inputs {
   display: inline-block;
-  float: left;
+}
+
+.update-college {
+  display: inline;
 }
 
 .progress {
@@ -87,4 +91,57 @@
 
 .no-outline{
   border-style: dashed;
+}
+
+.btn.btn-custom{
+  background-color: rgba(0,0,0,0);
+  border: 1px solid black;
+  border-radius: 15px;
+  padding: 10px 15px;
+}
+
+.btn.btn-custom:hover{
+  background-color: #EDDFBB;
+} 
+
+.btn.btn-custom-danger{
+  background-color: #167F39;
+  border: 1px solid black;
+  border-radius: 15px;
+  padding: 10px 15px;
+}
+
+.btn.btn-custom-danger:hover{
+  background-color: #A32B33;
+} 
+
+.btn.btn-success{
+  padding: 15px;
+}
+
+.text-field{
+  background-color: #FAEBD7;
+  border-radius: 15px;
+  padding: 20px;
+  border: 1px solid black;
+  box-shadow: none;
+}
+
+
+.form-inline .form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+}
+
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
 }

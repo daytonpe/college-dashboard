@@ -1,8 +1,16 @@
-<div class="container center_it">	
-	<h1>Search</h1>
-	<%= form_tag(search_path, method: "get") do %>
-	  <%= text_field_tag(:q) %> <br><br>
-	  <%= submit_tag("Search")%>
-	<% end %>
-</div>
+<div class="container center">	
+		<%= form_tag(search_path, method: "get", class: "form-inline") do %>
 
+			<div class="form-group">
+				<%= text_field_tag :q, "Massachusetts Institute of Technology", class: 'form-control text-field', size: 75 %>
+
+			</div>
+
+		  <%= button_tag(type: 'submit', class: "btn btn-custom") do %>
+		  	Search
+		  <% end %>
+
+
+	<% end %>
+	<h4>Search for a college then add it to your dashboard.</h4>
+</div>
